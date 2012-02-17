@@ -13,7 +13,10 @@ class Main
 	
 	static public function main() 
 	{
-		Lib.current.addChild(new RayTrace());
+		var r:RayTrace = new RayTrace();
+		r.x = 10;
+		r.y = 10;
+		Lib.current.addChild(r);
 	}
 	
 }
