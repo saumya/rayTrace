@@ -16,6 +16,7 @@ class ButtonBase extends Sprite
 		this.drawBG();
 		this.t = new TextField();
 		this.t.width = 50;
+		this.t.height = 20;
 		this.t.selectable = false;
 		this.addChild(this.t);
 	}
