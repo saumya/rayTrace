@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
-	<meta title="RayTrace" package="com.saumya.raytrace" version="1.0.0" company="www.saumyaray.com" />
+	<meta title="RayTrace" package="com.saumya.raytrace" version="2.0.0" company="www.saumyaray.com" />
 	<app main="Main" file="rayTrace" path="Export" />
  
-	<window width="800" height="600" unless="mobile" />
+	<window width="650" height="450" unless="mobile" />
 	<window fps="30" />
  
 	<source path="src" />
