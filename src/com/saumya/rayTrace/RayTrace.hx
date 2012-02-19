@@ -58,12 +58,12 @@ class RayTrace extends Sprite
 		var testBtn:ButtonBase = new ButtonBase();
 		testBtn.setLabel('test');
 		testBtn.setWidth(30);
-		testBtn.x = 625;
+		testBtn.x = 645;
 		this.addChild(testBtn);
 		testBtn.addEventListener(MouseEvent.CLICK, onTest);
 		//
 		this.scrollTrack=new ButtonBase();
-		this.scrollTrack.setLabel('s');
+		this.scrollTrack.setLabel('');
 		this.scrollTrack.setWidth(30);
 		this.scrollTrack.x=605;
 		this.scrollTrack.y=25;
@@ -91,7 +91,7 @@ class RayTrace extends Sprite
 		this.lc = new LocalConnection();
 		this.lc.client = this;
 		//this.lc.send('_RayTrace_V1.0.0_', 'log', message);
-		this.lc.connect('_RayTrace_V1.0.0_');
+		this.lc.connect('_RayTrace_V2.0.0_');
 		//
 		//this.lc.send('_RayTrace_V1.0.0_','log','hello');
 		
@@ -120,7 +120,7 @@ class RayTrace extends Sprite
 			*/
 			var ms:Int = this.t.maxScrollV;
 			var scrollHeight = (350 - 30); // min pos=30, max pos=360
-			var percentScroll:Int = Math.round((ms / scrollHeight) * (this.scrollTrack.y))-1;
+			var percentScroll:Int = Math.ceil((ms / scrollHeight) * (this.scrollTrack.y));
 			this.t.scrollV = percentScroll;
 			//
 			this.scrollTrack.y = this.mouseY - (this.scrollTrack.height / 2);
