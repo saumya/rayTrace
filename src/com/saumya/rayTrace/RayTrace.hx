@@ -50,6 +50,17 @@ class RayTrace extends Sprite
 		clearBtn.x = 0;
 		clearBtn.y = 410;
 		this.addChild(clearBtn);
+		//chanel info
+		var channelInfo:TextField = new TextField();
+		channelInfo.selectable = false;
+		channelInfo.height = 20;
+		channelInfo.width = 300;
+		channelInfo.x = 70;
+		channelInfo.y = 415;
+		channelInfo.text = 'Connection name : _RayTrace_V2.0.0_';
+		this.addChild(channelInfo);
+		
+		
 		//
 		clearBtn.addEventListener(MouseEvent.CLICK, onClear);
 		dnBtn.addEventListener(MouseEvent.CLICK, onDown);
@@ -59,7 +70,7 @@ class RayTrace extends Sprite
 		testBtn.setLabel('test');
 		testBtn.setWidth(30);
 		testBtn.x = 645;
-		this.addChild(testBtn);
+		//this.addChild(testBtn);
 		testBtn.addEventListener(MouseEvent.CLICK, onTest);
 		//
 		this.scrollTrack=new ButtonBase();
