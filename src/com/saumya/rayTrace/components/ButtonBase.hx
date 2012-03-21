@@ -6,6 +6,8 @@ import nme.text.TextField;
 class ButtonBase extends Sprite
 {
 	private var t:TextField;
+	private var bgColor:Int;
+	//
 	public function new():Void
 	{
 		super();
@@ -41,5 +43,15 @@ class ButtonBase extends Sprite
 		g.clear();
 		g.beginFill(0xAAAAAA);
 		g.drawRect(0,0,width,20);
+	}
+	
+	public function setBgColor(color:Int):Void
+	{
+		this.bgColor = color;
+		//
+		var g:Graphics = this.graphics;
+		g.clear();
+		g.beginFill(this.bgColor);
+		g.drawRect(0,0,this.width,20);
 	}
 }

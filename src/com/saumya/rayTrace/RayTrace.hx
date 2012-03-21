@@ -37,17 +37,20 @@ class RayTrace extends Sprite
 		var upBtn:ButtonBase = new ButtonBase();
 		upBtn.setLabel('up');
 		upBtn.setWidth(30);
+		upBtn.setBgColor(0xFFFF00);
 		upBtn.x = 605;
 		this.addChild(upBtn);
 		var dnBtn:ButtonBase = new ButtonBase();
 		dnBtn.setLabel('dn');
 		dnBtn.setWidth(30);
+		dnBtn.setBgColor(0xFFFF00);
 		dnBtn.x = 605;
 		dnBtn.y = 380;
 		this.addChild(dnBtn);
 		var clearBtn:ButtonBase = new ButtonBase();
 		clearBtn.setLabel('clear');
 		clearBtn.setWidth(50);
+		clearBtn.setBgColor(0xFFFF00);
 		clearBtn.x = 0;
 		clearBtn.y = 410;
 		this.addChild(clearBtn);
@@ -58,7 +61,7 @@ class RayTrace extends Sprite
 		channelInfo.width = 300;
 		channelInfo.x = 70;
 		channelInfo.y = 415;
-		channelInfo.text = 'Connection name : _RayTrace_V2.0.0_';
+		channelInfo.text = 'Connection name : _RayTrace_V3.0.0_';
 		this.addChild(channelInfo);
 		
 		
@@ -71,7 +74,7 @@ class RayTrace extends Sprite
 		testBtn.setLabel('test');
 		testBtn.setWidth(30);
 		testBtn.x = 645;
-		this.addChild(testBtn);
+		//this.addChild(testBtn);
 		testBtn.addEventListener(MouseEvent.CLICK, onTest);
 		//
 		this.scrollTrack=new ButtonBase();
@@ -94,11 +97,30 @@ class RayTrace extends Sprite
 		this.t.selectable = true;
 		this.t.width = 600;
 		this.t.height = 400;
-		this.t.text = 'RayTrace V 2.0.0';
+		this.t.text = 'RayTrace V 3.0.0';
 		this.t.background = true;
 		this.t.backgroundColor = 0xEEEEEE;
-		
 		this.addChild(this.t);
+		//
+		var btnStart:ButtonBase = new ButtonBase();
+		btnStart.setLabel('start');
+		btnStart.setWidth(50);
+		btnStart.setBgColor(0x00FF00);
+		btnStart.x = 490;
+		btnStart.y = 415;
+		var btnStop:ButtonBase = new ButtonBase();
+		btnStop.setLabel('stop');
+		btnStop.setWidth(50);
+		btnStop.setBgColor(0xFF0000);
+		btnStop.x = 545;
+		btnStop.y = 415;
+		//
+		btnStart.addEventListener(MouseEvent.CLICK, onStart);
+		btnStop.addEventListener(MouseEvent.CLICK, onStop);
+		//
+		this.addChild(btnStop);
+		this.addChild(btnStart);
+		/*
 		//connect
 		this.lc = new LocalConnection();
 		this.lc.client = this;
@@ -106,7 +128,23 @@ class RayTrace extends Sprite
 		this.lc.connect('_RayTrace_V2.0.0_');
 		//
 		//this.lc.send('_RayTrace_V1.0.0_','log','hello');
-		
+		*/
+	}
+	
+	private function onStop(e:MouseEvent):Void 
+	{
+		this.lc.close();
+		this.log('Logger Stopped.');
+	}
+	
+	private function onStart(e:MouseEvent):Void 
+	{
+		//connect
+		this.lc = new LocalConnection();
+		this.lc.client = this;
+		this.lc.connect('_RayTrace_V3.0.0_');
+		//
+		this.log('Logger Started.');
 	}
 	
 	private function onScrollMouseMove(e:MouseEvent):Void 
@@ -180,7 +218,7 @@ class RayTrace extends Sprite
 	private function onClear(e:MouseEvent):Void 
 	{
 		this.logNumber = 0;
-		this.logMessage = 'RayTrace V2.0.0';
+		this.logMessage = 'RayTrace V3.0.0';
 		this.t.text = this.logMessage;
 	}
 	
