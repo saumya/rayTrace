@@ -2,6 +2,7 @@ package com.saumya.rayTrace;
 //import haxe.remoting.LocalConnection;
 import com.saumya.raytrace.components.ButtonBase;
 import flash.net.LocalConnection;
+//import haxe.net.LocalConnection;
 
 import nme.display.Sprite;
 import nme.text.TextField;
@@ -70,7 +71,7 @@ class RayTrace extends Sprite
 		testBtn.setLabel('test');
 		testBtn.setWidth(30);
 		testBtn.x = 645;
-		//this.addChild(testBtn);
+		this.addChild(testBtn);
 		testBtn.addEventListener(MouseEvent.CLICK, onTest);
 		//
 		this.scrollTrack=new ButtonBase();
@@ -168,12 +169,12 @@ class RayTrace extends Sprite
 	
 	private function onUp(e:MouseEvent):Void 
 	{
-		this.t.scrollV++;
+		this.t.scrollV--;
 	}
 	
 	private function onDown(e:MouseEvent):Void 
 	{
-		this.t.scrollV--;
+		this.t.scrollV++;
 	}
 	
 	private function onClear(e:MouseEvent):Void 
