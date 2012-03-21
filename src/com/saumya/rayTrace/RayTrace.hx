@@ -1,6 +1,8 @@
 package com.saumya.rayTrace;
 //import haxe.remoting.LocalConnection;
 import com.saumya.raytrace.components.ButtonBase;
+import flash.events.Event;
+import flash.events.StatusEvent;
 import flash.net.LocalConnection;
 //import haxe.net.LocalConnection;
 
@@ -120,6 +122,10 @@ class RayTrace extends Sprite
 		//
 		this.addChild(btnStop);
 		this.addChild(btnStart);
+		//
+		this.lc = new LocalConnection();
+		this.lc.client = this;
+		//this.lc.addEventListener(flash.events.StatusEvent.STATUS, onStatusUpdate);
 		/*
 		//connect
 		this.lc = new LocalConnection();
@@ -131,6 +137,11 @@ class RayTrace extends Sprite
 		*/
 	}
 	
+	private function onStatusUpdate(e:StatusEvent):Void 
+	{
+		this.log('status: level='+ e.level);
+	}
+	
 	private function onStop(e:MouseEvent):Void 
 	{
 		this.lc.close();
@@ -140,8 +151,8 @@ class RayTrace extends Sprite
 	private function onStart(e:MouseEvent):Void 
 	{
 		//connect
-		this.lc = new LocalConnection();
-		this.lc.client = this;
+		//this.lc = new LocalConnection();
+		//this.lc.client = this;
 		this.lc.connect('_RayTrace_V3.0.0_');
 		//
 		this.log('Logger Started.');
