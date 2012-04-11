@@ -1,0 +1,5 @@
+-cp src
+-main Main		
+-swf9 bin/swf/rayTrace.swf
+-swf-header 700:450:30:FFFFFF
+-swf-version 11
