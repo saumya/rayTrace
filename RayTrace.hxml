@@ -1,0 +1,5 @@
+-cp Source
+-main Main		
+-swf9 Export/RayTrace.swf
+-swf-header 550:400:30:FFFFFF
+-swf-version 11

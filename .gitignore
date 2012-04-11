@@ -1,0 +1,13 @@
+.actionScriptProperties
+.flexProperties
+.project
+
+.settings/
+bin-debug/
+bin/
+html-template/
+Export/
+
+.DS_Store
+
+nme-readme.txt

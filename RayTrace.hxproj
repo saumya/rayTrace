@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2F80AF05-B870-43D3-B1F3-94D865B64EE2}</ProjectGuid>
+    <TargetHXMLFile>RayTrace.hxml</TargetHXMLFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Source\RayTrace.hx" />
+    <Compile Include="RayTrace.hxml" />
+    <Compile Include="Source\com\saumya\rayTrace\components\ButtonBase.hx" />
+    <Compile Include="Source\com\saumya\rayTrace\RayTrace.hx" />
+    <Compile Include="Source\libForApp\raytrace.as" />
+    <Compile Include="Source\Main.hx" />
+  </ItemGroup>
+</Project>
