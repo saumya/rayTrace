@@ -38,16 +38,11 @@ class RayTrace extends Sprite
 	public function init():Void
 	{
 		var upBtn:PushButton=new PushButton(this,605,0,'up');
-		upBtn.width=30;
+		upBtn.setSize(30,20);
 		var dnBtn:PushButton=new PushButton(this,605,380,'dn');
-		dnBtn.width=30;
-		var clearBtn:ButtonBase = new ButtonBase();
-		clearBtn.setLabel('clear');
-		clearBtn.setWidth(50);
-		clearBtn.setBgColor(0xFFFF00);
-		clearBtn.x = 0;
-		clearBtn.y = 410;
-		this.addChild(clearBtn);
+		dnBtn.setSize(30,20);
+		var clearBtn:PushButton=new PushButton(this,0,410,'clear');
+		clearBtn.setSize(50,20);
 		//chanel info
 		var channelInfo:TextField = new TextField();
 		channelInfo.selectable = false;
