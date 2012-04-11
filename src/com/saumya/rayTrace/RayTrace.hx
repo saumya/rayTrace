@@ -1,14 +1,15 @@
 package com.saumya.rayTrace;
-//import haxe.remoting.LocalConnection;
+
 import com.saumya.raytrace.components.ButtonBase;
 import flash.events.Event;
 import flash.events.StatusEvent;
 import flash.net.LocalConnection;
-//import haxe.net.LocalConnection;
 
 import flash.display.Sprite;
 import flash.text.TextField;
 import flash.events.MouseEvent;
+
+import minimalcomps.PushButton;
 
 /**
  * @version 1.0.0
@@ -36,19 +37,10 @@ class RayTrace extends Sprite
 	}
 	public function init():Void
 	{
-		var upBtn:ButtonBase = new ButtonBase();
-		upBtn.setLabel('up');
-		upBtn.setWidth(30);
-		upBtn.setBgColor(0xFFFF00);
-		upBtn.x = 605;
-		this.addChild(upBtn);
-		var dnBtn:ButtonBase = new ButtonBase();
-		dnBtn.setLabel('dn');
-		dnBtn.setWidth(30);
-		dnBtn.setBgColor(0xFFFF00);
-		dnBtn.x = 605;
-		dnBtn.y = 380;
-		this.addChild(dnBtn);
+		var upBtn:PushButton=new PushButton(this,605,0,'up');
+		upBtn.width=30;
+		var dnBtn:PushButton=new PushButton(this,605,380,'dn');
+		dnBtn.width=30;
 		var clearBtn:ButtonBase = new ButtonBase();
 		clearBtn.setLabel('clear');
 		clearBtn.setWidth(50);
@@ -63,7 +55,7 @@ class RayTrace extends Sprite
 		channelInfo.width = 300;
 		channelInfo.x = 70;
 		channelInfo.y = 415;
-		channelInfo.text = 'Connection name : _RayTrace_V3.0.0_';
+		channelInfo.text = 'Connection name : _RayTrace_V4.0.0_';
 		this.addChild(channelInfo);
 		
 		

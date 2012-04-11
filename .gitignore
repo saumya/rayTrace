@@ -14,5 +14,7 @@ nme-readme.txt
 
 RayTrace.pidb
 
-
 .hxtypes
+
+src/font/*
+src/minimalcomps/*

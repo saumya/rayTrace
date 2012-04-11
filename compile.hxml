@@ -3,3 +3,4 @@
 -swf9 bin/swf/rayTrace.swf
 -swf-header 700:450:30:FFFFFF
 -swf-version 11
+-swf-lib font/pf_ronda_seven.swf
