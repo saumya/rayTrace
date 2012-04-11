@@ -10,6 +10,8 @@ import flash.text.TextField;
 import flash.events.MouseEvent;
 
 import minimalcomps.PushButton;
+import minimalcomps.Label;
+import minimalcomps.Text;
 
 /**
  * @version 1.0.0
@@ -23,9 +25,9 @@ class RayTrace extends Sprite
 	private var logNumber:Int;
 	private var logMessage:String;
 	//
-	private var t:TextField;
+	private var t:Text;
 	//
-	private var scrollTrack:ButtonBase;
+	private var scrollTrack:PushButton;
 	private var shouldScroll:Bool;
 	//
 	private var lastPosY:Float;
@@ -44,34 +46,19 @@ class RayTrace extends Sprite
 		var clearBtn:PushButton=new PushButton(this,0,410,'clear');
 		clearBtn.setSize(50,20);
 		//chanel info
-		var channelInfo:TextField = new TextField();
-		channelInfo.selectable = false;
-		channelInfo.height = 20;
-		channelInfo.width = 300;
-		channelInfo.x = 70;
-		channelInfo.y = 415;
-		channelInfo.text = 'Connection name : _RayTrace_V4.0.0_';
-		this.addChild(channelInfo);
-		
-		
+		var channelInfo:Label=new Label(this,70,415,'Connection name : _RayTrace_V4.0.0_');
 		//
 		clearBtn.addEventListener(MouseEvent.CLICK, onClear);
 		dnBtn.addEventListener(MouseEvent.CLICK, onDown);
 		upBtn.addEventListener(MouseEvent.CLICK, onUp);
-		//
-		var testBtn:ButtonBase = new ButtonBase();
-		testBtn.setLabel('test');
-		testBtn.setWidth(30);
-		testBtn.x = 645;
-		//this.addChild(testBtn);
+		//test button
+		var testBtn:PushButton=new PushButton(this,645,0,'test');
+		testBtn.setSize(40,20);
+		//testBtn.visible=false;
 		testBtn.addEventListener(MouseEvent.CLICK, onTest);
 		//
-		this.scrollTrack=new ButtonBase();
-		this.scrollTrack.setLabel('');
-		this.scrollTrack.setWidth(30);
-		this.scrollTrack.x=605;
-		this.scrollTrack.y=25;
-		this.addChild(this.scrollTrack);
+		this.scrollTrack=new PushButton(this,605,25,'');
+		this.scrollTrack.setSize(20,20);
 		this.scrollTrack.addEventListener(MouseEvent.MOUSE_DOWN, onScrollMouseDown);
 		this.scrollTrack.addEventListener(MouseEvent.MOUSE_UP, onScrollMouseUp);
 		this.scrollTrack.addEventListener(MouseEvent.MOUSE_MOVE, onScrollMouseMove);
@@ -80,16 +67,9 @@ class RayTrace extends Sprite
 		this.logNumber = 0;
 		this.logMessage = '';
 		//
-		this.t = new TextField();
-		this.t.multiline = true;
-		this.t.wordWrap = true;
-		this.t.selectable = true;
-		this.t.width = 600;
-		this.t.height = 400;
-		this.t.text = 'RayTrace V 3.0.0';
-		this.t.background = true;
-		this.t.backgroundColor = 0xEEEEEE;
-		this.addChild(this.t);
+		this.t=new Text(this,0,0,'Hello Text');
+		this.t.setSize(600,400);
+		this.t.text='RayTrace V 4.0.0';
 		//
 		var btnStart:ButtonBase = new ButtonBase();
 		btnStart.setLabel('start');
@@ -166,6 +146,7 @@ class RayTrace extends Sprite
 			//update the last position
 			this.lastPosY = currentPosY;
 			*/
+			/*
 			var ms:Int = this.t.maxScrollV;
 			var scrollHeight = (350 - 30); // min pos=30, max pos=360
 			var percentScroll:Int = Math.ceil((ms / scrollHeight) * (this.scrollTrack.y));
@@ -179,7 +160,7 @@ class RayTrace extends Sprite
 			}else if(this.scrollTrack.y>=350) {
 				this.scrollTrack.y = 350;
 			}
-			
+			*/
 		}
 		
 	}
@@ -200,17 +181,18 @@ class RayTrace extends Sprite
 	
 	private function onTest(e:MouseEvent):Void 
 	{
-		this.log('hello : max scroll='+this.t.maxScrollV);
+		//this.log('hello : max scroll='+this.t.maxScrollV);
+		this.log('onTest : ');
 	}
 	
 	private function onUp(e:MouseEvent):Void 
 	{
-		this.t.scrollV--;
+		//this.t.scrollV--;
 	}
 	
 	private function onDown(e:MouseEvent):Void 
 	{
-		this.t.scrollV++;
+		//this.t.scrollV++;
 	}
 	
 	private function onClear(e:MouseEvent):Void 
