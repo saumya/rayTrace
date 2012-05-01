@@ -200,7 +200,7 @@ class RayTrace extends Sprite
 	private function onTest(e:MouseEvent):Void 
 	{
 		//this.log('hello : max scroll='+this.t.maxScrollV);
-		this.log('onTest : ');
+		this.log('onTest : checking');
 	}
 	
 	private function onUp(e:MouseEvent):Void 
