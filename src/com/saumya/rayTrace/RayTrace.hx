@@ -13,9 +13,10 @@ import minimalcomps.PushButton;
 import minimalcomps.Label;
 import minimalcomps.Text;
 import minimalcomps.InputText;
+import flash.errors.ArgumentError;
 
 /**
- * @version 1.0.0
+ * @version 4.0.1
  * @author saumya
  */
 
@@ -137,10 +138,16 @@ class RayTrace extends Sprite
 		}else{
 			connectionName='_RayTrace_V4.0.0_';
 		}
-		this.lc.connect(connectionName);
-		//
-		this.log(connectionName);
-		this.log('Logger Started.');
+		//this.lc.connect(connectionName);
+		try{
+			this.lc.connect(connectionName);
+			this.log(connectionName);
+			this.log('Logger Started.');
+		}catch(e:ArgumentError)
+		{
+			this.log(e.toString());
+			this.log('Already Running ! What you want to do ?!');
+		}
 	}
 	
 	private function onScrollMouseMove(e:MouseEvent):Void 
