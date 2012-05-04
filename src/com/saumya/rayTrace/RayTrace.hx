@@ -16,7 +16,7 @@ import minimalcomps.InputText;
 import flash.errors.ArgumentError;
 
 /**
- * @version 4.0.1
+ * @version 4.1.0
  * @author saumya
  */
 
@@ -51,7 +51,7 @@ class RayTrace extends Sprite
 		var clearBtn:PushButton=new PushButton(this,0,410,'clear');
 		clearBtn.setSize(50,20);
 		//chanel info
-		this.channelInfo=new Label(this,70,415,'Connection name : _RayTrace_V4.0.0_');
+		this.channelInfo=new Label(this,70,415,'Connection name : _RayTrace_V4.1.0_');
 		//
 		clearBtn.addEventListener(MouseEvent.CLICK, onClear);
 		dnBtn.addEventListener(MouseEvent.CLICK, onDown);
@@ -76,7 +76,7 @@ class RayTrace extends Sprite
 		//
 		this.t=new Text(this,0,0,'Hello Text');
 		this.t.setSize(600,400);
-		this.t.text='RayTrace V4.0.0';
+		this.t.text='RayTrace V4.1.0';
 		//
 		var btnStart:PushButton=new PushButton(this,555,415,'Start');
 		var btnStop:PushButton=new PushButton(this,600,415,'Stop');
@@ -89,12 +89,13 @@ class RayTrace extends Sprite
 		var btnAdvancedSettings:PushButton=new PushButton(this,250,415,'Advanced');
 		btnAdvancedSettings.setSize(50,20);
 		btnAdvancedSettings.addEventListener(MouseEvent.CLICK, onAdvancedSetting);
-		this.connectionNameText=new InputText(this,310,415,'_RayTrace_V4.0.0_');
+		this.connectionNameText=new InputText(this,310,415,'_RayTrace_V4.1.0_');
 		this.connectionNameText.setSize(200,20);
 		this.connectionNameText.visible=false;
 		this.isInAdvancedMode=false;
 		//
 		this.lc = new LocalConnection();
+		this.lc.allowDomain('*');
 		this.lc.client = this;
 		//this.lc.addEventListener(flash.events.StatusEvent.STATUS, onStatusUpdate);
 		/*
@@ -136,7 +137,7 @@ class RayTrace extends Sprite
 		{
 			connectionName=this.connectionNameText.text;
 		}else{
-			connectionName='_RayTrace_V4.0.0_';
+			connectionName='_RayTrace_V4.1.0_';
 		}
 		//this.lc.connect(connectionName);
 		try{
@@ -223,7 +224,7 @@ class RayTrace extends Sprite
 	private function onClear(e:MouseEvent):Void 
 	{
 		this.logNumber = 0;
-		this.logMessage = 'RayTrace V4.0.0';
+		this.logMessage = 'RayTrace V4.1.0';
 		this.t.text = this.logMessage;
 	}
 	
