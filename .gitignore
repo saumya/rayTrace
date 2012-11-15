@@ -16,5 +16,5 @@ RayTrace.pidb
 
 .hxtypes
 
-src/font/*
-src/minimalcomps/*
+# src/font/*
+# src/minimalcomps/*
